@@ -1,4 +1,3 @@
-@import "tailwindcss";
 let currentTab = "all";
 
 setTabData(jobs, currentTab);

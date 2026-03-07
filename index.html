@@ -6,54 +6,49 @@
     <title>Job Tracker Application</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/login.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 </head>
-<body class="bg-[#F8FAFC] geist">
-    <nav class="container space-y-5">
-        <h1 class="font-bold text-4xl">Job Application Tracker</h1>
-        <div class="overview-cards grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-white border border-[#F1F2F4] rounded-lg p-5">
-                <h3 class="text-sm font-medium">Total</h3>
-                <p id="card-all-jobs" class="text-2xl font-bold">11111</p>
+<body class="geist py-[76px]">
+    <div class="card shadow-2xl m-auto container w-[520px]">
+        <div class="p-8 space-y-6">
+        <div class="flex flex-col items-center">
+            <div>
+                <img src="./assets/github-logo.png" alt="">
             </div>
-            <div class="bg-white border border-[#F1F2F4] rounded-lg p-5">
-                <h3 class="text-sm font-medium">Interview</h3>
-                <p id="card-interview-jobs" class="text-2xl font-bold text-success">11111</p>
-            </div>
-            <div class="bg-white border border-[#F1F2F4] rounded-lg p-5">
-                <h3 class="text-sm font-medium">Rejected</h3>
-                <p id="card-reject-jobs" class="text-2xl font-bold text-error">11111</p>
-            </div>
+            <h2 class="font-semibold text-2xl">GitHub Issues Tracker</h2>
+            <p class="text-base-content/40">Sign in to manage your issues</p>
         </div>
-    </nav>
-    <div class="container py-8">
-        <hr class="text-[#E6E7E9]">
-    </div>
-    <section class="jobs-section container">
-        <div class="heading-container md:flex justify-between pb-6">
-            <div class="heading text-xl font-semibold"><span id="heading" class="capitalize">all</span> Jobs</div>
-            <div class="font-medium text-gray"><span id="total-jobs">8</span> out of <span id="out-total"></span> jobs</div>
-        </div>
-        <div id="parent" class="jobs space-y-4">
-            <div class="tab-group sm:grid-cols-2 md:grid-cols-3 gap-2.5">
-                <button id="all" class="btn capitalize w-24 btn-primary">all</button>
-                <button id="interview" class="btn capitalize w-24">interview</button>
-                <button id="reject" class="btn capitalize w-24">rejected</button>
-            </div>
 
-            <div id="accordion-all" class="job-cards">
-                
-            </div>
-            <div id="accordion-interview" class="job-cards">
-                
-            </div>
-            <div id="accordion-reject" class="job-cards">
-                
-            </div>
+        <div>
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend text-[16px]">User Name</legend>
+                <input type="text" id="user-name" class="input w-full" placeholder="Enter User Name" />
+                <p class="label text-sm text-primary">Default: admin</p>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <legend class="fieldset-legend text-[16px]">Password</legend>
+                <input type="text" id="password" class="input w-full" placeholder="Enter Password" />
+                <p class="label text-sm text-primary">Default: admin123</p>
+            </fieldset>
+
+
         </div>
-    
-    </section>
+
+        <button class="btn btn-primary w-full" type="button">Sign In</button>
+
+        <div class="divider">OR</div>
+
+        <div class="text-center">
+                <p class="text-sm text-base-content/40 pb-8">Demo Credentials:</p>
+
+                <p><span class="font-semibold">Username:</span> admin <br><span class="font-semibold">Password:</span> admin123</p>
+        </div>
+        </div>
+        </div>
+
+    </div>
 
     <script src="./scripts/data.js"></script>
     <script src="./scripts/viewFiles.js"></script>

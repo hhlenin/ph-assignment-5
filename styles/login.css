@@ -13,13 +13,13 @@ body {
     color: #64748B;
 }
 
-.container {
-    max-width: 70%;
-    margin-inline: auto;
-}
 
 @media screen and (max-width: 40rem) {
     .container {
         max-width: 90%;
+    }
+    body {
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
