@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker Application</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+</head>
+<body class="bg-[#F8FAFC] geist">
+    <nav class="container space-y-5">
+        <h1 class="font-bold text-4xl">Job Application Tracker</h1>
+        <div class="overview-cards grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white border border-[#F1F2F4] rounded-lg p-5">
+                <h3 class="text-sm font-medium">Total</h3>
+                <p id="card-all-jobs" class="text-2xl font-bold">11111</p>
+            </div>
+            <div class="bg-white border border-[#F1F2F4] rounded-lg p-5">
+                <h3 class="text-sm font-medium">Interview</h3>
+                <p id="card-interview-jobs" class="text-2xl font-bold text-success">11111</p>
+            </div>
+            <div class="bg-white border border-[#F1F2F4] rounded-lg p-5">
+                <h3 class="text-sm font-medium">Rejected</h3>
+                <p id="card-reject-jobs" class="text-2xl font-bold text-error">11111</p>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-8">
+        <hr class="text-[#E6E7E9]">
+    </div>
+    <section class="jobs-section container">
+        <div class="heading-container md:flex justify-between pb-6">
+            <div class="heading text-xl font-semibold"><span id="heading" class="capitalize">all</span> Jobs</div>
+            <div class="font-medium text-gray"><span id="total-jobs">8</span> out of <span id="out-total"></span> jobs</div>
+        </div>
+        <div id="parent" class="jobs space-y-4">
+            <div class="tab-group sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+                <button id="all" class="btn capitalize w-24 btn-primary">all</button>
+                <button id="interview" class="btn capitalize w-24">interview</button>
+                <button id="reject" class="btn capitalize w-24">rejected</button>
+            </div>
+
+            <div id="accordion-all" class="job-cards">
+                
+            </div>
+            <div id="accordion-interview" class="job-cards">
+                
+            </div>
+            <div id="accordion-reject" class="job-cards">
+                
+            </div>
+        </div>
+    
+    </section>
+
+    <script src="./scripts/data.js"></script>
+    <script src="./scripts/viewFiles.js"></script>
+    <script src="./scripts/helpers.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

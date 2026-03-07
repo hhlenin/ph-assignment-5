@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+.geist {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  color: #002C5C;
+}
+body {
+    padding: 60px 0;
+    min-height: 100vh;
+}
+.text-gray {
+    color: #64748B;
+}
+
+.container {
+    max-width: 70%;
+    margin-inline: auto;
+}
+
+@media screen and (max-width: 40rem) {
+    .container {
+        max-width: 90%;
+    }
+}
