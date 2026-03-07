@@ -20,7 +20,7 @@
             <p class="text-base-content/40">Sign in to manage your issues</p>
         </div>
 
-        <div>
+        <div id="inputs">
             <fieldset class="fieldset">
                 <legend class="fieldset-legend text-[16px]">User Name</legend>
                 <input type="text" id="user-name" class="input w-full" placeholder="Enter User Name" />
@@ -36,7 +36,8 @@
 
         </div>
 
-        <button class="btn btn-primary w-full" type="button">Sign In</button>
+        <button id="sign-in" class="btn btn-primary w-full" type="button">Sign In</button>
+        <p id="wrong-credential" class="text-error hidden">Wrong Credentials</p>
 
         <div class="divider">OR</div>
 
@@ -50,9 +51,6 @@
 
     </div>
 
-    <script src="./scripts/data.js"></script>
-    <script src="./scripts/viewFiles.js"></script>
-    <script src="./scripts/helpers.js"></script>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/login.js"></script>
 </body>
 </html>
