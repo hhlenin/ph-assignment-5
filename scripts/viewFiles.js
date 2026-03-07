@@ -1,6 +1,6 @@
 function makePostView(data, key) {
       
-    return `<div class="my-4 card w-full bg-base-100 shadow-sm ${(data.status === 'interview') ? 'border-l-8 border-success' : ''} ${(data.status === 'reject') ? 'border-l-8 border-error' : ''}">
+    return `<div class="my-4 card bg-base-100 shadow-sm ${(data.status === 'interview') ? 'border-l-8 border-success' : ''} ${(data.status === 'reject') ? 'border-l-8 border-error' : ''}">
             <div class="card-body space-y-2.5 md:space-y-5">
               <div class="flex justify-between items-center">
                 <div>

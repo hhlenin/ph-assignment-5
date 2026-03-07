@@ -8,11 +8,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add" />
 </head>
 <body class="bg-[#F8FAFC] geist">
-    <nav class="container space-y-5">
-        <h1 class="font-bold text-4xl">Job Application Tracker</h1>
-        <div class="overview-cards grid grid-cols-1 md:grid-cols-3 gap-4">
+    <nav class="flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="./assets/github-logo.png" height="36" width="36" alt="">
+            <h1 class="font-semibold text-2xl">GitHub Issues Tracker</h1>
+        </div>
+        <!-- <div class="overview-cards grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="bg-white border border-[#F1F2F4] rounded-lg p-5">
                 <h3 class="text-sm font-medium">Total</h3>
                 <p id="card-all-jobs" class="text-2xl font-bold">11111</p>
@@ -25,6 +29,18 @@
                 <h3 class="text-sm font-medium">Rejected</h3>
                 <p id="card-reject-jobs" class="text-2xl font-bold text-error">11111</p>
             </div>
+        </div> -->
+        <div class="flex">
+        <label class="input">
+            <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+            </g>
+            </svg>
+            <input type="search" class="grow" placeholder="Search issues..." />
+        </label>
+        <button type="button"><span class="material-symbols-outlined ">add</span>New Issue</button>
         </div>
     </nav>
     <div class="container py-8">
