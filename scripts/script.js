@@ -1,16 +1,9 @@
 let currentTab = "all";
 
-// setTabData(data, currentTab);
-// setCount(jobs);
-// setHeader(currentTab);
-
 
 document.getElementById("parent").addEventListener("click", function (e) {
 
-    // let currentTab = document.getElementById("heading").innerText.toLowerCase();
-
     const element = e.target;
-    console.log(element);
     
     if (element.tagName === "BUTTON" && element.classList.contains("w-24")) {
         const parent = element.parentNode;
@@ -25,30 +18,20 @@ document.getElementById("parent").addEventListener("click", function (e) {
             };
         }
     
-        // element.classList.add("btn-primary")
         currentTab = element.id;
-        // setTabData(jobs, currentTab)
+        document.getElementById("accordion-all").classList.add("hidden");
+        document.getElementById("accordion-open").classList.add("hidden");
+        document.getElementById("accordion-closed").classList.add("hidden");
+        document.getElementById(`accordion-${element.id}`).classList.remove("hidden");
+
+        document.getElementById(`all-issue-count`).classList.add("hidden")
+        document.getElementById(`closed-issue-count`).classList.add("hidden")
+        document.getElementById(`open-issue-count`).classList.add("hidden")
+
+        document.getElementById(`${element.id}-issue-count`).classList.remove("hidden");
+
     }
 
-    // if (element.classList.contains("delete")) {
-    //     if (!confirm("Are You Sure Want to Delete this Job?")) {
-    //         return;
-    //     }
-    //     jobs.splice(element.dataset.id, 1)
-    //     setTabData(jobs, currentTab);
-    // }
-
-    // if (element.tagName === "BUTTON") {
-    //     if (element.classList.contains("btn-error")) {
-    //         jobs[element.dataset.id].status = "reject"
-    //     }
-    //     if (element.classList.contains("btn-success")) {
-    //         jobs[element.dataset.id].status = "interview"
-    //     }
-    //     setTabData(jobs, currentTab);
-    // }
-    // setCount(jobs, element.id);
-    // setHeader(currentTab);
     e.stopPropagation;
 });
 

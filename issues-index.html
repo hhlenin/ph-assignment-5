@@ -42,8 +42,8 @@
         <div id="parent" class="card shadow-lg jobs p-6 mb-4">
             <div class="tab-group sm:grid-cols-2 md:grid-cols-3 gap-2.5">
                 <button id="all" class="btn capitalize w-24 btn-primary">all</button>
-                <button id="interview" class="btn capitalize w-24 text-base-content/60">open</button>
-                <button id="reject" class="btn capitalize w-24 text-base-content/60">closed</button>
+                <button id="open" class="btn capitalize w-24 text-base-content/60">open</button>
+                <button id="closed" class="btn capitalize w-24 text-base-content/60">closed</button>
             </div>
 
 
@@ -59,7 +59,12 @@
                     <img class="w-full" src="./assets/Aperture.png" alt="">
                 </div>
                 <div>
-                    <h3 class="font-semibold text-xl">50 Issues</h3>
+                    <h3 class="font-semibold text-xl">
+                        <span id="all-issue-count" class=""></span>
+                        <span id="open-issue-count" class="hidden"></span> 
+                        <span id="closed-issue-count" class="hidden"></span> 
+
+                        Issues</h3>
                     <p class="text-base-content/40">Track and manage your project issues</p>
                 </div>
             </div>
@@ -77,7 +82,7 @@
             </div>
         </div>
         <hr class="text-base-content/10">
-        <div id="spinner hidden">
+        <div id="spinner" class="">
             <div class="w-full h-36 flex justify-center">
                 <span class="loading loading-dots loading-xl"></span>
             </div>
@@ -85,31 +90,22 @@
         <div id="accordion-all" class="job-cards grid grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
             
         </div>
-        <!-- <div id="accordion-interview" class="job-cards">
+        <div id="accordion-open" class="job-cards hidden grid grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
 
         </div>
-        <div id="accordion-reject" class="job-cards">
+        <div id="accordion-closed" class="job-cards hidden grid grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
 
-        </div> -->
+        </div>
     </section>
 
     <script src="./scripts/data.js"></script>
-    <!-- <script src="./scripts/viewFiles.js"></script>
-    <script src="./scripts/helpers.js"></script> -->
     <script src="./scripts/script.js"></script>
 
     <script>
         setTabData();
+
     </script>
 
-    <!-- <script>
-        let data = fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues").
-                    then((response) => response.json()).
-                    then((data) => data) ;
-
-        console.log(data);
-                    
-    </script> -->
 </body>
 
 </html>

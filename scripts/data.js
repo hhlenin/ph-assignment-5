@@ -1,27 +1,48 @@
 const setTabData = function () {
   const allTab = document.getElementById("accordion-all");
+  const openTab = document.getElementById("accordion-open");
+  const closedTab = document.getElementById("accordion-closed");
 
-  document.getElementById("spinner").classList.remove("hide")
+  let allIssueCount = 0;
+  let closedIssueCount = 0;
+  let openIssueCount = 0;
 
+  // document.getElementById("spinner").classList.remove("hidden");  
 
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((response) => response.json())
     .then((json) => {
       allTab.innerHTML = "";
-
       json.data.forEach(issue => {
         makeCardView(issue, allTab);
-      });
+        allIssueCount++;
+        if (issue.status === "open") {
+          makeCardView(issue, openTab);
+          openIssueCount++;
+
+        }
+        if (issue.status === "closed") {
+          makeCardView(issue, closedTab);
+          closedIssueCount++;
+
+        }
+      });  
+      
+      document.getElementById("all-issue-count").innerText = allIssueCount;
+      document.getElementById("closed-issue-count").innerText = closedIssueCount;
+      document.getElementById("open-issue-count").innerText = openIssueCount;
+
+    
 
     }
 
     )
-    .finally (()=> document.getElementById("spinner").classList.add("hide"))
+    .finally (() => document.getElementById("spinner").classList.add("hidden"))
 };
 
-function makeCardView(data, tab) {
+function makeCardView(data, tabName) {
 
-  const card = document.createElement("div");
+  const cardDiv = document.createElement("div");
   const cardElement = `
     <div class="card bg-base-100 shadow-sm border-t-4 ${data.status === "open" ? "border-success" : "border-primary"}">
                 <div class="p-4 space-y-2.5">
@@ -48,8 +69,8 @@ function makeCardView(data, tab) {
             </div>
     
     `;
-  card.innerHTML = cardElement;
-  tab.append(card);
+  cardDiv.innerHTML = cardElement;
+  tabName.append(cardDiv);
 }
 
 function makeLableView(data) {
