@@ -44,7 +44,7 @@ function makeCardView(data, tabName) {
 
   const cardDiv = document.createElement("div");
   const cardElement = `
-    <div class="card bg-base-100 shadow-sm border-t-4 ${data.status === "open" ? "border-success" : "border-primary"}">
+    <div class="h-full card bg-base-100 shadow-sm border-t-4 ${data.status === "open" ? "border-success" : "border-primary"}">
                 <div class="p-4 space-y-2.5">
                     <div class="flex justify-between items-center">
                         <div>
