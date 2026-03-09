@@ -1,8 +1,12 @@
 const setTabData = function () {
+  const allTab = document.getElementById("accordion-all");
+
+  document.getElementById("spinner").classList.remove("hide")
+
+
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
     .then((response) => response.json())
     .then((json) => {
-      const allTab = document.getElementById("accordion-all");
       allTab.innerHTML = "";
 
       json.data.forEach(issue => {
@@ -12,6 +16,7 @@ const setTabData = function () {
     }
 
     )
+    .finally (()=> document.getElementById("spinner").classList.add("hide"))
 };
 
 function makeCardView(data, tab) {
