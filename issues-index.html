@@ -65,12 +65,12 @@
             </div>
 
 
-            <div class="flex">
-                <div class="flex items-center">
+            <div class="flex gap-4">
+                <div class="flex items-center gap-2">
                     <div class="h-3 w-3 bg-success rounded-full"></div>
                     <p class="capitalize font-medium">open</p>
                 </div>
-                <div class="flex items-center">
+                <div class="flex items-center gap-2">
                     <div class="h-3 w-3 bg-primary rounded-full"></div>
                     <p class="capitalize font-medium">closed</p>
                 </div>
@@ -93,8 +93,8 @@
                         <p class="text-xs">The navigation menu doesn't collapse properly on mobile devices...</p>
                     </div>
                     <p>
-                        <span class="badge badge-xs badge-soft border-error badge-error uppercase"><i
-                                class="fa-solid fa-bug"></i>bug</span>
+                        <span class="badge badge-xs badge-soft border-error badge-error uppercase p-0 m-0"><i
+                                class="fa-solid fa-bug p-0 m-0"></i>bug</span>
                         <span class=" badge badge-xs badge-soft border-warning badge-warning uppercase"><i
                                 class="fa-solid fa-life-ring"></i>help wanted</span>
                     </p>
@@ -116,9 +116,22 @@
     </section>
 
     <script src="./scripts/data.js"></script>
-    <script src="./scripts/viewFiles.js"></script>
-    <script src="./scripts/helpers.js"></script>
+    <!-- <script src="./scripts/viewFiles.js"></script>
+    <script src="./scripts/helpers.js"></script> -->
     <script src="./scripts/script.js"></script>
+
+    <script>
+        fetchAllIssue();
+    </script>
+
+    <!-- <script>
+        let data = fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues").
+                    then((response) => response.json()).
+                    then((data) => data) ;
+
+        console.log(data);
+                    
+    </script> -->
 </body>
 
 </html>

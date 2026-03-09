@@ -1,6 +1,6 @@
 let currentTab = "all";
 
-setTabData(data, currentTab);
+// setTabData(data, currentTab);
 // setCount(jobs);
 // setHeader(currentTab);
 
