@@ -1,4 +1,4 @@
-const setTabData = function () {
+const setTabData = function (address) {
   const allTab = document.getElementById("accordion-all");
   const openTab = document.getElementById("accordion-open");
   const closedTab = document.getElementById("accordion-closed");
@@ -7,12 +7,14 @@ const setTabData = function () {
   let closedIssueCount = 0;
   let openIssueCount = 0;
 
-  // document.getElementById("spinner").classList.remove("hidden");  
 
-  fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+  fetch(address)
     .then((response) => response.json())
     .then((json) => {
       allTab.innerHTML = "";
+      openTab.innerHTML = "";
+      closedTab.innerHTML = "";
+
       json.data.forEach(issue => {
         makeCardView(issue, allTab);
         allIssueCount++;
@@ -172,4 +174,15 @@ function openModal(id) {
     
 
   details_modal.showModal();
+}
+
+
+function getSearchResult(keyword) {
+  
+  if (keyword.length > 2) {
+    const address = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${keyword}`;
+
+    setTabData(address);
+  }
+  
 }
