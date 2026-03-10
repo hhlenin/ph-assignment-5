@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="shortcut icon" href="./assets/Open-Status.png" type="image/x-icon">
 </head>
 
 <body class="bg-[#F8FAFC] geist">
-    <nav class="flex justify-between items-center px-20 py-4 bg-white">
+    <nav class="md:flex justify-between items-center px-20 py-4 bg-white">
         <div class="flex items-center gap-1.5">
             <img src="./assets/github-logo.png" height="36" width="36" alt="">
             <h1 class="font-semibold text-2xl">GitHub Issues Tracker</h1>
         </div>
-        <div class="flex gap-4">
-            <label class="input">
+        <div class="md:flex gap-4">
+            <label class="input mb-1.5 md:mb-0">
                 <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
                         stroke="currentColor">
@@ -40,7 +41,7 @@
 
     <section class="jobs-section container mt-16 bg-white">
         <div id="parent" class="card shadow-lg jobs p-6 mb-4">
-            <div class="tab-group sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+            <div class="tab-group flex gap-2.5">
                 <button id="all" class="btn capitalize w-24 btn-primary">all</button>
                 <button id="open" class="btn capitalize w-24 text-base-content/60">open</button>
                 <button id="closed" class="btn capitalize w-24 text-base-content/60">closed</button>
@@ -53,7 +54,7 @@
     </section>
 
     <section class="jobs-section container mt-4 bg-white rounded-xl">
-        <div class="flex items-center justify-between p-6">
+        <div class="md:flex items-center justify-between p-6 sm:gap-3">
             <div class="flex gap-2.5">
                 <div class="flex justify-center items-center w-12 h-12 bg-[#ECE4FF] rounded-4xl">
                     <img class="w-7" src="./assets/Aperture.png" alt="">
@@ -70,7 +71,7 @@
             </div>
 
 
-            <div class="flex gap-4">
+            <div class="flex gap-4 sm:justify-center">
                 <div class="flex items-center gap-2">
                     <div class="h-3 w-3 bg-success rounded-full"></div>
                     <p class="capitalize font-medium">open</p>
@@ -87,16 +88,16 @@
                 <span class="loading loading-dots loading-xl"></span>
             </div>
         </div>
-        <div id="accordion-all" class="job-cards grid grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
+        <div id="accordion-all" class="job-cards grid grid-cols-1 md:grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
             
         </div>
-        <div id="accordion-open" class="job-cards hidden grid grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
+        <div id="accordion-open" class="job-cards hidden grid grid-cols-1 md:grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
 
         </div>
-        <div id="accordion-closed" class="job-cards hidden grid grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
+        <div id="accordion-closed" class="job-cards hidden grid grid-cols-1 md:grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
 
         </div>
-        <div id="accordion-search" class="job-cards hidden grid grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
+        <div id="accordion-search" class="job-cards hidden grid grid-cols-1 md:grid-cols-4 p-6 gap-3 bg-[#FBFBFB]">
 
         </div>
 
