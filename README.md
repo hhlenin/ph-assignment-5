@@ -1,35 +1,26 @@
+1️⃣ **What is the difference between var, let, and const?**
 
-_**1.**_  What is the **difference** between **getElementById**, **getElementsByClassName**, and **querySelector / querySelectorAll**?
+|   | var  |  let |  const |
+| :------------: | :------------: | :------------: | :------------: |
+| Value Update  |  ✓ | ✓ | × |
+|  Redeclare Variable | ✓ | × | × |
+| Scope | Global | Block | Block |
+|  Hoisting | ✓ | × | × |
 
-| getElementById | getElementsByClassName | querySelector | querySelectorAll |
-| --- | --- | --- | --- |
-| Gets only one element by ID | Gets all the matched elements by Class Name | Gets only one element by any css selectors | Gets all the matched elements by any css selectors |
-| Returns objects of the element | Returns HTML collection | Returns objects of the element | Returns NodeList |
-| observable if DOM changes | observable if DOM changes | observable if DOM changes | not observable if DOM changes |
+2️⃣** What is the spread operator (...)?**
+➡️ *Spread Operator*  flatten an array or string into individual elements.
 
-_**2.**_  How do you **create** and **insert** a **new element** into the DOM?
+3️⃣ What is the difference between map(), filter(), and forEach()?
+➡️
 
--   Use `document.createElement('element')` to create an element
--   Use fuctions like `appendChild(element)` or `innerHTML()` to insert the element
-
-_**3.**_  What is **Event Bubbling**? And how does it work?
-
-an event where it is triggered on a child element and then the same event keeps triggering on all of the parents untill reaching to the html tag
-
-_**4.**_  What is **Event Delegation** in JavaScript? Why is it useful?
-
-setting up the event listener to the target's initial parent with using the concept of event bubbling.
-
-**Why Useful**
-
--   Set up one event instead of setting mulitple events on multiple element
--   Less hassle in code management
--   Consume less memory
--   Faster behavior
+|   |**map()**   | **filter()**  | **forEach()**  |
+| :------------: | :------------: | :------------: | :------------: |
+|  return | new array  |  new array  | nothing  |
+| Uses  | transform values  | filtering values  | perform other operations  |
 
 
-_**5.**_  What is the difference between **preventDefault()** and **stopPropagation()** methods?
+4️⃣ What is an arrow function?
+➡️ *Arrow Function* is a *shorthand* to declare a function introduced in ES6.
 
-`preventDefault()` prevent browser's default behavior like submitting a form or opening links
-
- `stopPropagation()` stops bubbling up events to the parent element
+5️⃣ What are template literals?
+➡️ It is a very powerful way to *combine html and logical javascript*. To use it we can put *any length of html template* inside *backticks* and write down any logical js inside that template

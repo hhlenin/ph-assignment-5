@@ -2,36 +2,36 @@ let currentTab = "all";
 
 document.getElementById("parent").addEventListener("click", function (e) {
 
-    const element = e.target;
-    
-    if (element.tagName === "BUTTON" && element.classList.contains("w-24")) {
-        const parent = element.parentNode;
-        const chlidren = parent.children;
+  const element = e.target;
 
-        for (const child of chlidren) {
-            child.classList.remove("btn-primary");
-            child.classList.add("text-base-content/60");
-            if (child === element) {
-                child.classList.add("btn-primary");
-            child.classList.remove("text-base-content/60");
-            };
-        }
-    
-        currentTab = element.id;
-        document.getElementById("accordion-all").classList.add("hidden");
-        document.getElementById("accordion-open").classList.add("hidden");
-        document.getElementById("accordion-closed").classList.add("hidden");
-        document.getElementById(`accordion-${element.id}`).classList.remove("hidden");
+  if (element.tagName === "BUTTON" && element.classList.contains("w-24")) {
+    const parent = element.parentNode;
+    const chlidren = parent.children;
 
-        document.getElementById(`all-issue-count`).classList.add("hidden")
-        document.getElementById(`closed-issue-count`).classList.add("hidden")
-        document.getElementById(`open-issue-count`).classList.add("hidden")
-
-        document.getElementById(`${element.id}-issue-count`).classList.remove("hidden");
-
+    for (const child of chlidren) {
+      child.classList.remove("btn-primary");
+      child.classList.add("text-base-content/60");
+      if (child === element) {
+        child.classList.add("btn-primary");
+        child.classList.remove("text-base-content/60");
+      };
     }
 
-    e.stopPropagation;
+    currentTab = element.id;
+    document.getElementById("accordion-all").classList.add("hidden");
+    document.getElementById("accordion-open").classList.add("hidden");
+    document.getElementById("accordion-closed").classList.add("hidden");
+    document.getElementById(`accordion-${element.id}`).classList.remove("hidden");
+
+    document.getElementById(`all-issue-count`).classList.add("hidden")
+    document.getElementById(`closed-issue-count`).classList.add("hidden")
+    document.getElementById(`open-issue-count`).classList.add("hidden")
+
+    document.getElementById(`${element.id}-issue-count`).classList.remove("hidden");
+
+  }
+
+  e.stopPropagation;
 });
 
 
@@ -48,9 +48,7 @@ const setTabData = function (address) {
   fetch(address)
     .then((response) => response.json())
     .then((json) => {
-      allTab.innerHTML = "";
-      openTab.innerHTML = "";
-      closedTab.innerHTML = "";
+
 
       json.data.forEach(issue => {
         makeCardView(issue, allTab);
@@ -65,18 +63,18 @@ const setTabData = function (address) {
           closedIssueCount++;
 
         }
-      });  
-      
+      });
+
       document.getElementById("all-issue-count").innerText = allIssueCount;
       document.getElementById("closed-issue-count").innerText = closedIssueCount;
       document.getElementById("open-issue-count").innerText = openIssueCount;
 
-    
+
 
     }
 
     )
-    .finally (() => document.getElementById("spinner").classList.add("hidden"))
+    .finally(() => document.getElementById("spinner").classList.add("hidden"))
 };
 
 
@@ -98,7 +96,7 @@ function openModal(id) {
             </div>
         </div>
         <div class="mb-6">`
-            + makeLableView(json.data.labels) +
+        + makeLableView(json.data.labels) +
         `</div>
         <div class="mb-6">
             <p class="text-base-content/30">${json.data.description}</p>
@@ -121,17 +119,21 @@ function openModal(id) {
       modal.innerHTML = "";
       modal.append(contentDiv);
     })
-    
+
 
   details_modal.showModal();
 }
 
 function getSearchResult(keyword) {
-  
+
   if (keyword.length > 2) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("accordion-all").innerHTML = "";
+    document.getElementById("accordion-open").innerHTML = "";
+    document.getElementById("accordion-closed").innerHTML = "";
     const address = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${keyword}`;
 
     setTabData(address);
   }
-  
+
 }
